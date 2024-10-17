@@ -225,6 +225,22 @@ def findTargetTags(target, channel):
         rows = cur.fetchall()
         return rows
 
+#TODO: implement in kalja.py
+def add_kalja(uid, chatid, beers):
+    with cursor() as cur:
+        query = ("INSERT INTO Kaljat (uid, chatid, beers) VALUES (?, ?, ?)")
+        params = (uid, chatid, beers)
+        
+        cur.execute(query, params)
+
+#TODO: implement in kalja.py
+def get_user_beers(uid, chatid):
+    #TODO: implement
+
+#TODO: implement in kalja.py
+def get_group_beers(chatid, limit):
+    #TODO: implement
+
 def addUrheilu(uid, chatid, km, lajinnimi, date):
     with cursor() as cur:
         query = ("INSERT INTO Urheilut (uid, chatid, km, type, date) VALUES (?, ?, ?, "
